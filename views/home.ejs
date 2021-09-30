@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title><%=title%></title>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+        <link rel="stylesheet" href="/css/home.css"/>
+       
+    </head>
+
+    <body>
+
+        <div id="container">
+            <h1 id="main-heading">TODO App</h1>
+
+
+            <!-- Form to take input from users -->
+            <form action="/create-task" method="POST">
+                <!-- description box -->
+                <div class="description hovering">
+                    <label>                     
+                        DESCRIPTION<br/>
+                        <input class="input1" type="text" name="description" placeholder="What do you need to do?" />
+                    </label>
+                </div>
+                
+                
+                    <!-- categories of work to do -->
+                <div class="flex">    
+                    <div class="category hovering">
+                        <label>
+                            CATEGORY<br/>
+                            <select name="category">
+                                <option value="Choose a category">Choose a category</option>
+                                <option value="Personal">Personal</option>
+                                <option value="Work">Work</option>
+                                <option value="School">School</option>
+                                <option value="Cleaning">Cleaning</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </label>
+                    </div>
+                    
+                    <div class="date hovering">
+                        <label>
+                            DUE DATE<br/>
+                            <input class="input2" type="date" name="date" />
+                        </label>
+                    </div>
+                </div>
+                
+                <br/>
+                
+                <button class="button button1" value="submit">
+                    <i class="icon fas fa-plus-square"></i> 
+                    ADD TASK
+                </button>
+                
+        
+            </form>
+
+           
+
+        <!-- This is the lists of works in different categories -->
+            <div id="todo-list-container">
+                <form action="/delete-task" method="GET">
+                    <ul>
+                        <% for(let i of todo_list) { %>
+                            <li class="todo">
+                                <div class="details">
+                                    
+                                    <input id="checkbox" type="checkbox" name="<%=i._id%>" />
+                                    <h1 id="second"><%= i.description %></h1>
+                                    
+                                    <p id="para"><i id="icon1" class="fas fa-calendar-alt"></i><%= i.date %></p>
+                                    
+                                </div>
+                                <div id="category">
+                                    <p><%= i.category %></p>
+                                </div>
+                                
+                            </li>
+                        <% } %>
+                    </ul>
+                    
+                    <button class="button button2" value="submit">
+                        <i class="icon fas fa-trash-alt"></i>
+                        DELETE TASK
+                    </button>
+               </form>
+            </div>
+        </div>
+
+    </body>
+</html>
