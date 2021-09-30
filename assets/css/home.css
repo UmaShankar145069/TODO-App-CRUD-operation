@@ -1,0 +1,206 @@
+/* ------- animation effect------ */
+@keyframes changecolor{
+    0%{background-color:hotpink;}
+    25%{background-color:indianred;}
+    50%{background-color:fuchsia;}
+    75%{background-color:cyan;}
+    100%{background-color:darkorchid;}
+}
+
+body{
+    animation-name:changecolor;
+    animation-duration:10s;
+    animation-iteration-count:infinite;
+}
+
+/* Styles for main container div */
+#container{
+    background-color:chartreuse;
+    text-align:center;
+    border:solid 1px;
+    width:50%;
+    margin-left:25%;
+    position:relative;
+}
+/* Styles for application heading */
+#main-heading{
+    margin-top:30px;
+    font-family:sans-serif;
+    color:gray;
+}
+/* Styles for description box */
+.description{
+    border-top:solid 1px;
+    height: 35px;
+    border-bottom:solid 1px;
+    text-align:left;
+    padding-left:10px;
+    padding-top:3px;
+    padding-bottom:15px;
+    background:peachpuff;
+}
+
+.input1{
+    border:none;
+    width:97%;
+    background:peachpuff;
+}
+
+.flex{
+    display:flex;
+    flex-wrap:no-wrap;
+}
+
+/* --- styles for category field--- */
+.category{
+    border-bottom:solid 1px;
+    border-right: solid 1px;
+    width:49%;
+    height: 35px;
+    /* float: left; */
+    text-align:left;
+    padding-left:10px;
+    padding-top:3px;
+    padding-bottom:15px;
+    background-color:powderblue;
+}
+
+select{
+    border:none;
+    width:97%;
+    background-color:powderblue;
+}
+
+/* ---- styles for date field----- */
+.date{
+    border-bottom:solid 1px;
+    width: 48.23%;
+    height: 35px;
+    /* float: left; */
+    text-align:left;
+    padding-left:10px;
+    padding-top:3px;
+    padding-bottom:15px;
+    background-color:pink;
+}
+
+.input2{
+    border:none;
+    width:97%;
+    background-color:pink;
+}
+
+.hovering:hover{
+    background-color: lightgray;
+}
+
+/* ---- styles for add and delete button---- */
+.button{
+    color:white;
+    width:150px;
+    height:50px;
+    border:none;
+}
+
+.button:hover{
+    transform:skew(5deg,5deg);
+}
+
+.button1{
+    margin-top:3px;
+    background-color:black;
+}
+
+.button2{
+    background-color:red;
+}
+
+.icon{
+    margin-left:-10px;
+    width:20px;
+}
+
+/* ----------- todo tasks styling--------- */
+
+#todo-list-container ul{
+    padding:0;
+    list-style:none;
+}
+
+.todo{
+    padding:3px 10px;
+    border:1px solid white;
+    background-color:darkgray;
+    box-shadow:1px 0px 1px 0px lightgrey;
+    color:white;
+    height:60px;
+}
+
+.todo:nth-child(odd){
+    background-color:tomato;
+}
+
+.todo:nth-child(even){
+    background-color:teal;
+}
+
+.details{
+    height:50px;
+    display:flex;
+    flex-wrap:wrap;
+} 
+
+#checkbox{
+    margin-top:18px;
+    margin-left:0px;
+    margin-right:15px;
+}
+
+#second{
+    font-size:20px;
+    height:25px;
+    margin-top:5px;
+    margin-bottom:0px;
+}
+
+#icon1{
+    margin:5px 5px 5px 0px;
+}
+
+#para{
+    font-size:15px;
+    margin:0px;
+    margin-top:30px;
+    margin-left:2px;
+    position:absolute;
+    left:40px;
+}
+
+#category{
+    height:30px;
+    width:auto;
+    float:right;
+    background-color:violet;
+    color:white;
+    margin-top:-35px;
+}
+
+#category p{
+    margin:1px;
+    text-align:center;
+    padding:5px;
+}
+
+/* ----- adding responsivness for mobile view------- */
+
+@media only screen and (max-width:1192px){
+    #category{
+        margin-top:-50px;
+    }
+}
+
+@media only screen and (max-width:912px){
+    .todo{
+        height:95px;
+    }
+}
